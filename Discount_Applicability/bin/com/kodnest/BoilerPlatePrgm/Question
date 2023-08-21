@@ -1,0 +1,69 @@
+=================================================QUESTION====================================================================
+
+Discount Applicability
+
+Question Description: Create a program that checks if the purchase is above $100 and prints "Discount Applicable". The program should accept a double 'purchaseAmount' as input.
+
+Boiler Plate Code:
+
+public class Main
+
+{
+
+public static void checkDiscount(double purchaseAmount)
+
+{
+
+// your code here
+
+}
+
+public static void main(String[] args)
+
+{
+
+//code here
+
+}
+
+}
+
+Sample Input: 150.0
+
+Sample Output: +
+
+==========================================================SOLUTION============================================================
+package com.kodnest.BoilerPlatePrgm;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void checkDiscount(double purchaseAmount)
+
+	{
+		if(purchaseAmount>100)
+		{
+			System.out.println("+");
+		}
+		else
+		{
+			System.out.println("Discount not Applicable");
+		}
+	}
+
+	public static void main(String[] args)
+
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the purchase amount");
+		double purchaseAmount=scan.nextDouble();
+		checkDiscount(purchaseAmount);
+	}
+}
+
+
+=========================================================OUTPUT================================================================
+
+Enter the purchase amount
+150
++

@@ -1,0 +1,72 @@
+======================================================QUESTION======================================================================
+
+Number Table Printer
+
+Question Description: Create a program that prints the multiplication table of a given number. The program should accept an integer 'num' as input.
+
+Boiler Plate Code:
+
+public class Main
+
+{
+
+public static void printTable(int num)
+
+{
+
+// your code here
+
+}
+
+public static void main(String[] args)
+
+{
+
+//code here
+
+}
+
+}
+
+Sample Input: 5
+
+Sample Output: 5 x 1 = 5 5 x 2 = 10 ... 5 x 10 = 50
+
+========================================================SOLUTION================================================================
+
+package com.kodnest;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void printTable(int num)
+
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(num +"*"+i +"="+(num*i));
+		}
+
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int num=scan.nextInt();
+		 printTable(num);
+	}
+	}
+
+======================================================OUTPUT==================================================================
+
+5
+5*1=5
+5*2=10
+5*3=15
+5*4=20
+5*5=25
+5*6=30
+5*7=35
+5*8=40
+5*9=45
+5*10=50

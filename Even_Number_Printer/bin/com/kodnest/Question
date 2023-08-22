@@ -1,0 +1,76 @@
+=====================================================QUESTION======================================================================
+
+Even Number Printer
+
+Question Description: Create a program that prints all the even numbers between 1 and 'n'. The program should accept an integer 'n' as input.
+
+Boiler Plate Code:
+
+public class Main
+
+{
+
+public static void printEvenNumbers(int n)
+
+{
+
+// your code here
+
+}
+
+public static void main(String[] args)
+
+{
+
+//code here
+
+}
+
+}
+
+Sample Input: 10
+
+Sample Output: 2 4 6 8 10
+
+
+=============================================================SOLUTION==================================================================
+
+package com.kodnest;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void printEvenNumbers(int n)
+
+	{
+      for(int i=2;i<=n;i=i+2)
+       {
+    	  System.out.println(i);
+    	  continue;
+       }
+	
+
+	}
+
+	public static void main(String[] args)
+
+	{
+
+    Scanner scan=new Scanner(System.in);
+    int n= scan.nextInt();
+    printEvenNumbers(n);
+
+}
+
+	
+}
+
+
+=========================================================OUTPUT=====================================================================
+
+10
+2
+4
+6
+8
+10

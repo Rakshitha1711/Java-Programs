@@ -1,0 +1,66 @@
+=============================================QUESTION=============================================================
+
+Factorial Calculator
+
+Question Description:
+
+Create a program that calculates the factorial of a given number. The program should accept an integer 'n' as input.
+
+Boiler Plate Code:
+
+public class Main
+
+{
+
+public static void calculateFactorial(int n)
+
+{
+
+// your code here
+
+}
+
+public static void main(String[] args)
+
+{
+
+//code here
+
+}
+
+}
+
+Sample Input: 5
+
+Sample Output: 120
+
+--------------------------------
+
+==========================================================SOLUTION============================================
+
+package com.kodnest.BoilerPlate;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		factor(n);
+	}
+	public static void factor(int n)
+	{
+		int sum=1;
+	   for(int i=1;i<=n;i++)
+	   {
+		   sum=sum*i;
+	   }
+	   System.out.println(sum);
+	}
+}
+
+=========================================================OUTPUT===============================================
+
+5
+120

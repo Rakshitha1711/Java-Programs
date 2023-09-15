@@ -1,0 +1,45 @@
+================================================ QUESTION ========================================================
+
+Write a java Program To Count the number of digits of present in a number
+
+================================================ SOLUTION ============================================================
+
+package com.kodnest.count;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a number");
+		int num=scan.nextInt();
+		Counting c=new Counting();
+		int digits=c.countDigits(num);
+		System.out.println("Number of digits in "+num +" is "+digits);
+
+	}
+
+}
+
+package com.kodnest.count;
+
+public class Counting
+{
+	int countDigits(int num)
+	{
+		int count=0;
+		while (num!=0)
+		{
+			num=num/10;
+			count++;
+		}
+		return count;
+	}
+
+}
+
+============================================================= OUTPUT ==================================================
+
+Enter a number
+12345
+Number of digits in 12345 is 5

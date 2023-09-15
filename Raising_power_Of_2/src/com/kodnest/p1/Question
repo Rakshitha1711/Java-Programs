@@ -1,0 +1,41 @@
+============================================== QUESTION ==============================================================
+
+Write a java program to print the result of a number when it is raised to the power of 2
+
+================================================ SOLUTION ==============================================================
+
+package com.kodnest.p1;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a number");
+		int n=scan.nextInt();
+		Power p1=new Power();
+		int res=p1.raiseToTwo(n);
+		System.out.println(res);
+	}
+	
+
+}
+
+
+package com.kodnest.p1;
+
+public class Power
+    {
+	int raiseToTwo(int n)
+	{
+		return n*n;
+	}
+
+}
+
+
+================================================== SOLUTION =============================================================
+
+Enter a number
+2
+4

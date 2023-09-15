@@ -1,0 +1,48 @@
+================================================== QUESTION ==================================================================
+
+Write a java program to print the result of a number when it is raised to the power of n
+
+===================================================== SOLUTION ==================================================================
+
+package com.kodnest.p2;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a number");
+		int num=scan.nextInt();
+		System.out.println("Enter the power");
+		int n=scan.nextInt();
+		Power p1=new Power();
+		int res=p1.raiseToPowerN(num,n);
+		System.out.println(res);
+
+	}
+
+}
+
+package com.kodnest.p2;
+
+public class Power {
+	int raiseToPowerN(int num,int n)
+	{
+	   int finalresult=1;
+		for(int i=1;i<=n;i++)
+		{
+			finalresult=finalresult*num;
+		}
+		return finalresult;
+	}
+
+}
+
+
+================================================= OUTPUT =====================================================================
+
+Enter a number
+2
+Enter the power
+5
+32

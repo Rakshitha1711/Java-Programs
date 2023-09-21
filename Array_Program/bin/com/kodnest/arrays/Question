@@ -1,0 +1,58 @@
+====================================================================== QUESTION ========================================================================================
+
+Write a Java Program to create a array of required length and take the input from the user to store it in the array and display the contents of the Array according to the below given scenario.
+a. Store the names of the employee
+
+
+=============================================== SOLUTION ==========================================================
+
+package com.kodnest.arrays;
+import java.util.Scanner;
+public class NameOfEmployee 
+{
+
+	public static void main(String[] args)
+			{
+				Scanner scan=new Scanner(System.in);
+				String emp[]=new String[8];
+				for(int i=0;i<emp.length;i++)
+				{
+					System.out.println("Enter the names of the Employees "+i);
+					emp[i]=scan.next();
+				}
+				System.out.println("Names--->>");
+				for(int i=0;i<emp.length;i++)
+				{
+					System.out.print(emp[i]+" ");
+					
+				}
+				
+
+			}
+
+}
+
+
+================================================= OUTPUT ============================================================
+
+Enter the names of the Employees 0
+Rakshitha
+Enter the names of the Employees 1
+Arpitha
+Enter the names of the Employees 2
+Nithya
+Enter the names of the Employees 3
+Taj
+Enter the names of the Employees 4
+Raghu
+Enter the names of the Employees 5
+Rakesh
+Enter the names of the Employees 6
+Anu
+Enter the names of the Employees 7
+Bhagya
+Names--->>
+Rakshitha Arpitha Nithya Taj Raghu Rakesh Anu Bhagya 
+	
+
+

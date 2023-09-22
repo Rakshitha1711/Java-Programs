@@ -1,0 +1,62 @@
+================================================== QUESTION =================================================================
+
+Write a java program to check whether the given number is Palindrome or not.
+
+================================================== SOLUTION ===============================================================
+
+package com.kodnest.palindrome;
+import java.util.Scanner;
+public class PalindromeCheck {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a number ");
+		int num=scan.nextInt();
+		boolean res =new PalindromeChecker().palindromeCheck(num);
+		if(res==true)
+		{
+			System.out.println("Entered number is palindrome");
+		}
+		else
+		{
+			System.out.println("Entered number is not palindrome");
+		}
+		
+
+	}
+}
+
+package com.kodnest.palindrome;
+
+public class PalindromeChecker 
+{
+	public boolean palindromeCheck(int num)
+	{
+		int original=num;
+		int m=0;
+		int n=0;
+		while(num>0)
+		{
+		m=num%10;
+		num=num/10;
+		n=n*10+m;
+		}
+		if(n==original)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+}
+
+
+===================================================== OUTPUT ============================================================
+
+Enter a number 
+1221
+Entered number is palindrome

@@ -1,0 +1,85 @@
+============================================= QUESTION ===================================================================
+
+Write a Java program taking length as input and create an array of One Dimensional Array.
+
+======================================================== SOLUTION =======================================================
+
+package com.kodnest.arrays;
+import java.util.Scanner;
+public class TwoDimensionalJaggedArray {
+
+	public static void main(String[] args) 
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the number class");
+		int arr[][]=new int[scan.nextInt()][];
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			System.out.println("Enter the number of student in class "+i);
+			arr[i]=new int[scan.nextInt()];
+		}
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			for (int j=0;j<=arr[i].length-1;j++)
+			{
+				System.out.println("Enter the marks of class "+i+"student "+j);
+				arr[i][j]=scan.nextInt();
+			}
+		}
+		System.out.println("Array contents are....");
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			for (int j=0;j<=arr[i].length-1;j++)
+			{
+				System.out.print(arr[i][j]+" | ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+========================================================= OUTPUT =============================================================
+
+Enter the number class
+3
+Enter the number of student in class 0
+6
+Enter the number of student in class 1
+4
+Enter the number of student in class 2
+5
+Enter the marks of class 0 student 0
+89
+Enter the marks of class 0 student 1
+87
+Enter the marks of class 0 student 2
+85
+Enter the marks of class 0 student 3
+88
+Enter the marks of class 0 student 4
+89
+Enter the marks of class 0 student 5
+87
+Enter the marks of class 1 student 0
+85
+Enter the marks of class 1 student 1
+83
+Enter the marks of class 1 student 2
+82
+Enter the marks of class 1 student 3
+81
+Enter the marks of class 2 student 0
+84
+Enter the marks of class 2 student 1
+85
+Enter the marks of class 2 student 2
+87
+Enter the marks of class 2 student 3
+86
+Enter the marks of class 2 student 4
+88
+Array contents are....
+89 | 87 | 85 | 88 | 89 | 87 | 
+85 | 83 | 82 | 81 | 
+84 | 85 | 87 | 86 | 88 | 

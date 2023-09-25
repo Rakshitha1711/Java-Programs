@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Linear_Search {
-}

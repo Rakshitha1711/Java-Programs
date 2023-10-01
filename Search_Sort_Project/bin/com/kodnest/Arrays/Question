@@ -1,0 +1,375 @@
+========================================================== QUESTION ========================================================
+Search sort Project.
+========================================================== SOLUTION ==========================================================
+
+package com.kodnest.Arrays;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a length of Array");
+		int arr[]=new int[scan.nextInt()];
+		System.out.println("Enter "+arr.length+" Elements");
+		KodnestSearchSort kss=new KodnestSearchSort();
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			arr[i]=scan.nextInt();
+		}
+		while(true)
+		{
+			System.out.println("Enter your Choice");
+			System.out.println("Press 1-------> Searching");
+			System.out.println("Press 2-------> Sorting");
+			System.out.println("Press 3-------> Finding Minimum Or Maximum");
+			System.out.println("Press Any Other-------> TATA BYE BYE....");
+			int choice =scan.nextInt();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("Press 1-----> Linear Search");
+				System.out.println("Press 2-----> Binary Search");
+				int choice1=scan.nextInt();
+				if(choice1==1)
+				{
+					System.out.println("Enter a key to Search");
+					int key=scan.nextInt();
+					int res=kss.linearSearch(arr,key);
+					if(res>=0)
+					{
+						System.out.println("Key found at "+res);
+					}
+					else
+					{
+						System.out.println("Key not found");
+					}
+				}
+				else if(choice1==2)
+				{
+					System.out.println("Enter a key to Search");
+					int key=scan.nextInt();
+					int res=kss.binarySearch(arr,key);
+					if(res>=0)
+					{
+						System.out.println("Key found at "+res);
+					}
+					else
+					{
+						System.out.println("Key not found");
+					}
+					
+				}
+				else
+				{
+					System.out.println("Go to vasan Eye Care and Come Back");
+				}
+				break;
+			case 2:
+				System.out.println("Press 1-----> Bubble Sort");
+				System.out.println("Press 2-----> Selection Sort");
+				System.out.println("Press 3-----> Insertion Sort");
+				int choice2=scan.nextInt();
+				if(choice2==1)
+				{
+					
+					System.out.println("Enter 1 for Ascending and Enter 2 for Descending");
+					int choice3=scan.nextInt();
+					if(choice3==1)
+					{
+						kss.bubbleSortAscending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+						
+					}
+					else if(choice3==2)
+					{
+						kss.bubbleSortDescending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+					}
+					else
+					{
+						System.out.println("Go to vasan Eye Care and Come Back");
+					}
+				}
+				else if(choice2==2)
+				{
+					System.out.println("Enter 1 for Ascending and Enter 2 for Descending");
+					int choice3=scan.nextInt();
+					if(choice3==1)
+					{
+						kss.selectionSortAscending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+					}
+					else if(choice3==2)
+					{
+						kss.selectionSortDescending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+					}
+					else
+					{
+						System.out.println("Go to vasan Eye Care and Come Back");
+					}
+				}
+				else if(choice2==3)
+				{
+					System.out.println("Enter 1 for Ascending and Enter 2 for Descending");
+					int choice3=scan.nextInt();
+					if(choice3==1)
+					{
+						kss.insertionSortAscending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+					}
+					else if(choice3==2)
+					{
+						kss.insertionSortDescending(arr);
+						System.out.println("Elements after sorting");
+						for(int i=0;i<=arr.length-1;i++)
+						{
+							System.out.print(arr[i]+" ");
+						}
+					}
+					else
+					{
+						System.out.println("Go to vasan Eye Care and Come Back");
+					}
+					
+				}
+				else
+				{
+					System.out.println("Go to vasan Eye Care and Come Back");
+				}
+				break;
+			case 3:
+				System.out.println("Press 1----->Finding Minimum");
+				System.out.println("Press 2----->Finding Maximum");
+				int choice4=scan.nextInt();
+				if(choice4==1)
+				{
+					int res=kss.findMinimum(arr);
+					System.out.println("Minimum number is "+res);
+				}
+				else if(choice4==2)
+				{
+					int res=kss.findMaximum(arr);
+					System.out.println("Maximum number is "+res);
+				}
+				else
+				{
+					System.out.println("Go to vasan Eye Care and Come Back");
+				}
+				break;
+			default:
+				System.out.println("TATA BYE BYE...");
+				
+			}
+			return;
+		}
+	}
+}
+
+package com.kodnest.Arrays;
+import java.util.Scanner;
+public class KodnestSearchSort 
+{
+	int linearSearch(int arr[],int key)
+	{
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			if(key==arr[i])
+			{
+				return i;
+			}
+	    }
+		 return -1;
+	}
+
+	int binarySearch(int arr[],int key)
+	{
+		int low=0;
+		int high=arr.length-1;
+		while(low<=high)
+		{
+			int mid=(low+high)/2;
+			if(key==arr[mid])
+			{
+				return mid;
+			}
+			else if(key>arr[mid])
+			{
+				low=mid+1;
+			}
+			else
+			{
+				high=mid-1;
+			}
+		}
+		return-1;
+	}
+
+	void bubbleSortAscending(int arr[])
+	{
+		for(int i=0;i<=arr.length-2;i++)
+		{
+			for(int j=0;j<=arr.length-2-i;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					int help=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=help;
+				}
+			}
+		}
+	}
+	void bubbleSortDescending(int arr[])
+	{
+		for(int i=0;i<=arr.length-2;i++)
+		{
+			for(int j=0;j<=arr.length-2-i;j++)
+			{
+				if(arr[j]<arr[j+1])
+				{
+					int help=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=help;
+				}
+			}
+		}
+	}
+	void selectionSortAscending(int arr[])
+	{
+
+		 for(int i=0;i<=arr.length-2;i++)
+	        {
+	        	int min=arr[i];
+	        	int pos=i;
+	        	for(int j=i+1;j<=arr.length-1;j++)
+	        	{
+	        		if(arr[j]<min)
+	        		{
+	        			min=arr[j];
+	        			pos=j;
+	        		}
+	        	}
+	        	int help=arr[i];
+	        	arr[i]=arr[pos];
+	        	arr[pos]=help;
+	        }
+	}
+	void selectionSortDescending(int arr[])
+	{
+
+		 for(int i=0;i<=arr.length-2;i++)
+	        {
+	        	int min=arr[i];
+	        	int pos=i;
+	        	for(int j=i+1;j<=arr.length-1;j++)
+	        	{
+	        		if(arr[j]>min)
+	        		{
+	        			min=arr[j];
+	        			pos=j;
+	        		}
+	        	}
+	        	int help=arr[i];
+	        	arr[i]=arr[pos];
+	        	arr[pos]=help;
+	        }
+	}
+	void insertionSortAscending(int arr[])
+	{
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			int item=arr[i];
+			int j=i-1;
+			while(j>=0 && arr[j]>item)
+			{
+				arr[j+1]=arr[j];
+				j--;
+			}
+			arr[j+1]=item;
+		}
+	}
+	void insertionSortDescending(int arr[])
+	{
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			int item=arr[i];
+			int j=i-1;
+			while(j>=0 && arr[j]<item)
+			{
+				arr[j+1]=arr[j];
+				j--;
+			}
+			arr[j+1]=item;
+		}
+	}
+	int findMinimum(int arr[])
+	{
+		int compare=arr[0];
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			if(arr[i]<=compare)
+			{
+				compare=arr[i];
+			}
+		}
+		return compare;
+	}
+	int findMaximum(int arr[])
+	{
+		int compare=arr[0];
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			if(arr[i]>=compare)
+			{
+				compare=arr[i];
+			}
+		}
+		return compare;
+	}
+}
+================================================================= OUTPUT =========================================================
+
+Enter a length of Array
+5
+Enter 5 Elements
+45
+85
+12
+25
+95
+Enter your Choice
+Press 1-------> Searching
+Press 2-------> Sorting
+Press 3-------> Finding Minimum Or Maximum
+Press Any Other-------> TATA BYE BYE....
+2
+Press 1-----> Bubble Sort
+Press 2-----> Selection Sort
+Press 3-----> Insertion Sort
+3
+Enter 1 for Ascending and Enter 2 for Descending
+2
+Elements after sorting
+95 85 45 25 12 

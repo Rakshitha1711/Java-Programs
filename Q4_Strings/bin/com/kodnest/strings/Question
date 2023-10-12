@@ -1,0 +1,43 @@
+====================================================== QUESTION ==================================================================
+
+Write a Java Program that converts all upper case alphabets to lower case and vice varsa.
+
+===================================================== SOLUTION ==================================================================
+
+package com.kodnest.strings;
+import java.util.Scanner;
+public class Strings {
+
+	public static void main(String[] args) 
+	{
+		Scanner scan=new Scanner(System.in);
+		String input=scan.nextLine();
+		String result=convertCase(result);
+	}
+	public static String convertCase(String input)
+	{
+		char arr[]=input.toCharArray();
+	    for(int i=0;i<=arr.length-1;i++)
+	    {
+	    	int temp=arr[i];
+	    	if(temp>=65 && temp<=90)
+	    	{
+	    		temp=temp+32;
+	    	}
+	    	else if(temp>=97 && temp<=122)
+	    	{
+	    		temp=temp-32;
+	    	}
+	  
+	    	arr[i]=(char)temp;
+	    }
+	    input=new String(arr);
+	    return input;
+	}
+}
+
+=================================================== OUTPUT ======================================================================
+
+Enter a String
+java pROGRAmming 123
+JAVA PrograMMING 123
